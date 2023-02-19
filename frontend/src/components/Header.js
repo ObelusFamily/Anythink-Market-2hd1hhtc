@@ -49,7 +49,7 @@ const LoggedInView = (props) => {
   );
 };
 
-function Header ({props}) {
+function Header ({ currentUser }) {
 
     return (
       <nav
@@ -60,10 +60,10 @@ function Header ({props}) {
           <img alt="logo" src={logo} />
         </Link>
 
-        {props.currentUser ? (
-          <LoggedInView currentUser={props.currentUser} />
+        {currentUser ? (
+          <LoggedInView currentUser={currentUser} />
         ) : (
-          <LoggedOutView currentUser={props.currentUser} />
+          <LoggedOutView currentUser={currentUser} />
         )}
       </nav>
     
